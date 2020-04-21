@@ -1,29 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 
-import './../sass/style.scss'; // adres do głównego pliku SASS
 
-class App extends React.Component {
+import "./../sass/style.scss"; // adres do głównego pliku SASS
 
-    showAlert = (e) => {
-        alert(e.target.innerText);
-    }
+import Container from "./Container.js"
 
-    render() {
-        return <h2 ref={el => this.h2 = el} onClick={this.showAlert}>To tylko test!</h2>
-    }
+const App = () => {
+  return (
 
-    componentDidMount() {
-        console.log(this.h2);
-    }
-}
+      <Container/>
 
-document.addEventListener('DOMContentLoaded', function() {
-    ReactDOM.render(
-        <>
-            <App />
-        </>,
-        document.getElementById('app')
-    )
-})
+  );
+};
 
+document.addEventListener("DOMContentLoaded", function() {
+  ReactDOM.render(
+    <>
+      <App />
+    </>,
+    document.getElementById("app")
+  );
+});

@@ -1,15 +1,18 @@
 
-body {
-    /* scieżka musi być względem pliku /js/app.js */
-    background: url('../images/catApp.jpg');
-  }
-  
-  ::placeholder {
-    color: blue,
-  }
-  
-  body {
-    transition: 1s;
-    display: flex;
-    /* now */
-  }
+
+::placeholder {
+  color: blue;
+}
+
+//////////////////////////////////////////////////////////////////////////
+// 442 formacja
+
+// .formation451 {
+//   width: 1000px;
+//   margin: 0 auto;
+//   background: green;
+//   display: grid;
+//   grid-template-columns: 1fr ;
+//   grid-template-rows: 1fr 1fr 1fr 1fr;
+// }
+///////////////////////////////////////////////////////////////////////

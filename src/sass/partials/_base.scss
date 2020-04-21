@@ -1,0 +1,50 @@
+.formations {
+  display: flex;
+  flex-wrap: wrap;
+}
+.containerFormation {
+  width: 1000px;
+  margin: 0 auto;
+  background-image: url('../images/pitch.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+
+
+
+  .row {
+
+    img {
+      width: 140px;
+    }
+    [class*="col-"] {
+      float: left;
+
+    }
+    @for $i from 1 through 12 {
+      .col-#{$i} {
+        width: 100% / 12 * $i;
+      }
+
+    }
+  }
+
+  .height-low {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .height {
+    height: 312.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
