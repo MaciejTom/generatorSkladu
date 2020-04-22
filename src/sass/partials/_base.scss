@@ -1,5 +1,13 @@
+h1 {
+  text-align: center;
+}
+.formation {
+  display: flex;
+  flex-direction: column;
+}
 .formations {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 .containerFormation {
@@ -47,4 +55,14 @@
     clear: both;
     content: "";
   }
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black
+
+}
+.name {
+  display: flex;
+  flex-direction: column;
 }

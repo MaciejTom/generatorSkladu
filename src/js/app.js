@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 
-import "./../sass/style.scss"; // adres do głównego pliku SASS
+import "./../sass/style.scss";
+// adres do głównego pliku SASS
 
 import Container from "./Container.js"
 

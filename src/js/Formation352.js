@@ -8,7 +8,8 @@ export default function Formation352({setFormation, shoe}) {
 
   return (
     <>
-      <h1>formacja 3 5 2</h1>
+    <div className="formation">
+      <h1>3-5-2</h1>
         <div className="containerFormation" onClick={() => setFormation('352') }>
       <div className="row">
           <div className="col-3 height"></div>
@@ -33,6 +34,7 @@ export default function Formation352({setFormation, shoe}) {
           <div className="col-12 height">{shoe}</div>
       </div>
   </div>
+</div>
     </>
   );
 }

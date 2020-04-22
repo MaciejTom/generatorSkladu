@@ -3,7 +3,8 @@ import React, { useState } from "react";
 export default function Formation4231({setFormation, shoe}) {
   return (
     <>
-      <h1>formacja 4 2 3 1</h1>
+    <div className="formation">
+      <h1>4-2-3-1</h1>
         <div className="containerFormation" onClick={() => setFormation('4231') }>
         <div className="row">
             <div className="col-12 height-low">{shoe}</div>
@@ -29,6 +30,7 @@ export default function Formation4231({setFormation, shoe}) {
           <div className="col-12 height-low">{shoe}</div>
       </div>
   </div>
+</div>
     </>
   );
 }
