@@ -35,10 +35,11 @@ const img = <img src={shoeImg} />
     setTeam(copyTeam);
 
   }
-
+console.log(team[1])
 
 if (formation === "442" ) {
   return <>
+
   <Formation442 setFormation={setFormation} shoe={img} team={team}/>
   <ul>
     {team.map((p,index) => p ? <li>{index}: {p._s}</li> : null)}
