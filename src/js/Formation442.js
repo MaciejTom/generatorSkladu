@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import shoeImg from './../images/shoe.png'
 
 export default function Formation442({setFormation, shoe, team}) {
-console.log([{...team}])
+
 
   const myTeam = {...team}
   console.log(myTeam)
 
-
-
-
-
-  return (
+return (
     <>
     <div className="formation">
       <h1>4-4-2</h1>

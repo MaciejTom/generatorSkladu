@@ -4,11 +4,19 @@ h1 {
 .formation {
   display: flex;
   flex-direction: column;
+  .card {
+    flex-direction: column;
+  }
+
+  .name {
+    text-align: center;
+  }
 }
 .formations {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
 }
 .containerFormation {
   width: 1000px;
@@ -23,11 +31,13 @@ h1 {
 
   .row {
 
+
     img {
       width: 140px;
     }
     [class*="col-"] {
       float: left;
+
 
     }
     @for $i from 1 through 12 {
