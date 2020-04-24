@@ -8,15 +8,18 @@ import Formation451 from "./Formation451";
 import MainSection from "./MainSection";
 import shoeImg from "./../images/shoe.png";
 import SoccerWiki from "../convertjson.json";
+import noPhoto from "./../images/nophoto.png";
 
 export default function Container() {
+
 
   const [footballer, setFootballer] = useState(SoccerWiki.PackData.PlayerData.P);
   const [value, setValue] = useState("");
   const arr =
-    value.length > 3 ? footballer.filter(el => el._s.includes(value)) : [];
+    value.length > 3 ? footballer.filter(el => el._s.toLowerCase().includes(value.toLowerCase()) || el._f.toLowerCase().includes(value.toLowerCase()) ) : [];
   const [formation, setFormation] = useState(null);
   const img = <img src={shoeImg} />;
+  console.log(noPhoto)
 
   const [position, setPosition] = useState("1");
   const [soccerMan, setSoccerMan] = useState("");
@@ -36,29 +39,31 @@ export default function Container() {
   if (formation === "442") {
     return (
       <>
+      <div className="searcher">
         <Formation442 setFormation={setFormation} shoe={img} team={team} />
-        <div>
+        <div className="cardWithInput">
+          <h2>Nazwisko piłkarza:</h2>
           <input value={value} onChange={e => setValue(e.target.value)} />
           {arr.map(footballer => (
             <div className="card">
-              <img width="100px" heigth="150px" src={footballer._i} />
+              <img width="100px" heigth="150px" src={footballer._i !== "" ? footballer._i : noPhoto} />
               <div className="name">
                 {footballer._f} {footballer._s}
               </div>
               <div>
                 <form onSubmit={e => handleSubmit(e, footballer)}>
                   <select onChange={handlePositionChange}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
+                    <option value="1">LN</option>
+                    <option value="2">PN</option>
+                    <option value="3">LP</option>
+                    <option value="4">ŚP</option>
+                    <option value="5">ŚP</option>
+                    <option value="6">PP</option>
+                    <option value="7">LO</option>
+                    <option value="8">ŚO</option>
+                    <option value="9">ŚO</option>
+                    <option value="10">PO</option>
+                    <option value="11">BR</option>
                   </select>
                   <input type="submit" value="Dodaj" />
                 </form>
@@ -66,34 +71,37 @@ export default function Container() {
             </div>
           ))}
         </div>
+        </div>
       </>
     );
   } else if (formation === "352") {
     return (
     <>
+    <div className="searcher">
     <Formation352 setFormation={setFormation} shoe={img} team={team} />
-      <div>
+      <div className="cardWithInput">
+        <h2>Nazwisko piłkarza:</h2>
         <input value={value} onChange={e => setValue(e.target.value)} />
         {arr.map(footballer => (
           <div className="card">
-            <img width="100px" heigth="150px" src={footballer._i} />
+            <img width="100px" heigth="150px" src={footballer._i !== "" ? footballer._i : noPhoto} />
             <div className="name">
               {footballer._f} {footballer._s}
             </div>
             <div>
               <form onSubmit={e => handleSubmit(e, footballer)}>
                 <select onChange={handlePositionChange}>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
+                  <option value="1">LN</option>
+                  <option value="2">PN</option>
+                  <option value="3">LP</option>
+                  <option value="4">LŚP</option>
+                  <option value="5">ŚP</option>
+                  <option value="6">PŚP</option>
+                  <option value="7">PP</option>
+                  <option value="8">LŚO</option>
+                  <option value="9">ŚO</option>
+                  <option value="10">PŚO</option>
+                  <option value="11">BR</option>
                 </select>
                 <input type="submit" value="Dodaj" />
               </form>
@@ -101,33 +109,36 @@ export default function Container() {
           </div>
         ))}
       </div>
+    </div>
       </>)
   } else if (formation === "433") {
     return(
       <>
-      <Formation433 setFormation={setFormation} shoe={img} team={team}/>;
-        <div>
+      <div className="searcher">
+      <Formation433 setFormation={setFormation} shoe={img} team={team}/>
+        <div className="cardWithInput">
+          <h2>Nazwisko piłkarza:</h2>
           <input value={value} onChange={e => setValue(e.target.value)} />
           {arr.map(footballer => (
             <div className="card">
-              <img width="100px" heigth="150px" src={footballer._i} />
+              <img width="100px" heigth="150px" src={footballer._i !== "" ? footballer._i : noPhoto} />
               <div className="name">
                 {footballer._f} {footballer._s}
               </div>
               <div>
                 <form onSubmit={e => handleSubmit(e, footballer)}>
                   <select  onChange={handlePositionChange}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
+                    <option value="1">LN</option>
+                    <option value="2">ŚN</option>
+                    <option value="3">PN</option>
+                    <option value="4">LŚP</option>
+                    <option value="5">ŚP</option>
+                    <option value="6">PŚP</option>
+                    <option value="7">LO</option>
+                    <option value="8">ŚO</option>
+                    <option value="9">ŚO</option>
+                    <option value="10">PO</option>
+                    <option value="11">BR</option>
                   </select>
                   <input type="submit" value="Dodaj" />
                 </form>
@@ -135,34 +146,37 @@ export default function Container() {
             </div>
           ))}
         </div>
+      </div>
       </>
     );
   } else if (formation === "451") {
     return (
       <>
+      <div className="searcher">
        <Formation451 setFormation={setFormation} shoe={img} team={team}/>;
-         <div>
+         <div className="cardWithInput">
+           <h2>Nazwisko piłkarza:</h2>
            <input value={value} onChange={e => setValue(e.target.value)} />
            {arr.map(footballer => (
              <div className="card">
-               <img width="100px" heigth="150px" src={footballer._i} />
+               <img width="100px" heigth="150px" src={footballer._i !== "" ? footballer._i : noPhoto} />
                <div className="name">
                  {footballer._f} {footballer._s}
                </div>
                <div>
                  <form onSubmit={e => handleSubmit(e, footballer)}>
-                   <select ref={ el => this.position} value={position} onChange={handlePositionChange}>
-                     <option value="1">1</option>
-                     <option value="2">2</option>
-                     <option value="3">3</option>
-                     <option value="4">4</option>
-                     <option value="5">5</option>
-                     <option value="6">6</option>
-                     <option value="7">7</option>
-                     <option value="8">8</option>
-                     <option value="9">9</option>
-                     <option value="10">10</option>
-                     <option value="11">11</option>
+                   <select onChange={handlePositionChange}>
+                     <option value="1">ŚN</option>
+                     <option value="2">LP</option>
+                     <option value="3">LŚP</option>
+                     <option value="4">ŚP</option>
+                     <option value="5">PŚP</option>
+                     <option value="6">PP</option>
+                     <option value="7">LO</option>
+                     <option value="8">ŚO</option>
+                     <option value="9">ŚO</option>
+                     <option value="10">PO</option>
+                     <option value="11">BR</option>
                    </select>
                    <input type="submit" value="Dodaj" />
                  </form>
@@ -170,34 +184,37 @@ export default function Container() {
              </div>
            ))}
          </div>
+       </div>
        </>
      );
   } else if (formation === "4141") {
     return (
       <>
-      <Formation4141 setFormation={setFormation} shoe={img} team={team}/>;
-        <div>
+      <div className="searcher">
+      <Formation4141 setFormation={setFormation} shoe={img} team={team}/>
+        <div className="cardWithInput">
+          <h2>Nazwisko piłkarza:</h2>
           <input value={value} onChange={e => setValue(e.target.value)} />
           {arr.map(footballer => (
             <div className="card">
-              <img width="100px" heigth="150px" src={footballer._i} />
+              <img width="100px" heigth="150px" src={footballer._i !== "" ? footballer._i : noPhoto} />
               <div className="name">
                 {footballer._f} {footballer._s}
               </div>
               <div>
                 <form onSubmit={e => handleSubmit(e, footballer)}>
                   <select value={position} onChange={handlePositionChange}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
+                    <option value="1">ŚN</option>
+                    <option value="2">LP</option>
+                    <option value="3">ŚP</option>
+                    <option value="4">ŚP</option>
+                    <option value="5">PP</option>
+                    <option value="6">ŚPD</option>
+                    <option value="7">LO</option>
+                    <option value="8">ŚO</option>
+                    <option value="9">ŚO</option>
+                    <option value="10">PO</option>
+                    <option value="11">BR</option>
                   </select>
                   <input type="submit" value="Dodaj" />
                 </form>
@@ -205,34 +222,37 @@ export default function Container() {
             </div>
           ))}
         </div>
+      </div>
       </>
     );
   } else if (formation === "4231") {
     return (
       <>
-      <Formation4231 setFormation={setFormation} shoe={img} team={team} />;
-        <div>
+      <div className="searcher">
+      <Formation4231 setFormation={setFormation} shoe={img} team={team} />
+        <div className="cardWithInput">
+          <h2>Nazwisko piłkarza:</h2>
           <input value={value} onChange={e => setValue(e.target.value)} />
           {arr.map(footballer => (
             <div className="card">
-              <img width="100px" heigth="150px" src={footballer._i} />
+              <img width="100px" heigth="150px" src={footballer._i !== "" ? footballer._i : noPhoto} />
               <div className="name">
                 {footballer._f} {footballer._s}
               </div>
               <div>
                 <form onSubmit={e => handleSubmit(e, footballer)}>
                   <select value={position} onChange={handlePositionChange}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
+                    <option value="1">ŚN</option>
+                    <option value="2">LS</option>
+                    <option value="3">ŚPO</option>
+                    <option value="4">PS</option>
+                    <option value="5">ŚPD</option>
+                    <option value="6">ŚPD</option>
+                    <option value="7">LO</option>
+                    <option value="8">ŚO</option>
+                    <option value="9">ŚO</option>
+                    <option value="10">PO</option>
+                    <option value="11">BR</option>
                   </select>
                   <input type="submit" value="Dodaj" />
                 </form>
@@ -240,6 +260,7 @@ export default function Container() {
             </div>
           ))}
         </div>
+      </div>
       </>
     );
   }
@@ -248,12 +269,30 @@ export default function Container() {
     <>
       <h1>Wybierz foramcje</h1>
       <div className="formations">
+        <div className="formation">
+        <h1>4-4-2</h1>
         <Formation442 setFormation={setFormation} shoe={img} />
+        </div>
+        <div className="formation">
+        <h1>3-5-2</h1>
         <Formation352 setFormation={setFormation} shoe={img} />
+        </div>
+        <div className="formation">
+          <h1>4-3-3</h1>
         <Formation433 setFormation={setFormation} shoe={img} />
+        </div>
+        <div className="formation">
+          <h1>4-5-1</h1>
         <Formation451 setFormation={setFormation} shoe={img} />
+        </div>
+        <div className="formation">
+          <h1>4-1-4-1</h1>
         <Formation4141 setFormation={setFormation} shoe={img} />
+        </div>
+        <div className="formation">
+          <h1>4-2-3-1</h1>
         <Formation4231 setFormation={setFormation} shoe={img} />
+        </div>
       </div>
     </>
   );

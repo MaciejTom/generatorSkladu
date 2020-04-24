@@ -6,6 +6,17 @@ h1 {
   flex-direction: column;
   .card {
     flex-direction: column;
+    text-align: center;
+    border: none;
+    background: none;
+    color: black;
+    .name {
+      font-weight: bold;
+
+    }
+
+
+
   }
 
   .name {
@@ -16,24 +27,85 @@ h1 {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0 20px 20px 20px;
+
+  .containerFormation {
+    width: 500px;
+    margin: 0 auto;
+    background-image: url('../images/pitch.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+
+    .row {
+
+
+      img {
+        width: 70px;
+      }
+      [class*="col-"] {
+        float: left;
+
+
+      }
+      @for $i from 1 through 12 {
+        .col-#{$i} {
+          width: 100% / 12 * $i;
+        }
+
+      }
+    }
+
+    .height-low {
+      height: 125px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .height {
+      height: 156.25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &::after {
+      display: block;
+      clear: both;
+      content: "";
+    }
+  }
 
 }
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  background: rgb(70,148,16);
+background: linear-gradient(90deg, rgba(70,148,16,1) 0%, rgba(23,82,0,1) 100%);
+  align-items: center;
+
+}
+.name {
+  display: flex;
+  flex-direction: column;
+}
+//////////////////////////////////////////////////////////////////////////////
 .containerFormation {
-  width: 1000px;
+  width: calc(1000px/1.4);
   margin: 0 auto;
   background-image: url('../images/pitch.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
-
-
+  margin-top: 10px;
 
   .row {
 
 
     img {
-      width: 140px;
+      width: calc(140px/1.4);
     }
     [class*="col-"] {
       float: left;
@@ -49,13 +121,13 @@ h1 {
   }
 
   .height-low {
-    height: 250px;
+    height: calc(250px / 1.4);
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .height {
-    height: 312.5px;
+    height: calc(312.5px / 1.4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,13 +138,49 @@ h1 {
     content: "";
   }
 }
-.card {
+////////////////////////////////////////////////////////////////////////////////
+.searcher {
   display: flex;
-  justify-content: space-between;
-  border: 1px solid black
-
+  justify-content: center;
+  width: 100vw;
 }
-.name {
-  display: flex;
-  flex-direction: column;
+.cardWithInput {
+  overflow: scroll;
+  width: 500px;
+  height: 100vh;
+  overflow : auto;
+  margin-top: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  color: black;
+  h2 {
+    margin: 0 0 0 10px;
+    color: darkgrey;
+  }
+  input {
+    margin: 10px 0 10px 10px;
+  }
+}
+.span {
+  display: block;
+  text-align: center;
+}
+input, option, select  {
+	background-color:#44c767;
+	border-radius:17px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:8px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+input:hover {
+	background-color:#5cbf2a;
+}
+input:active {
+	position:relative;
+	top:1px;
 }

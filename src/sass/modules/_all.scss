@@ -1,6 +1,10 @@
 body {
   /* scieżka musi być względem pliku /js/app.js */
-  background: red;
+  background: rgb(255,255,255);
+background: url('../images/background.jpg');
   transition: 3s;
   display: flex;
+  font-family: 'Manrope', sans-serif;
+  color: white;
+
 }

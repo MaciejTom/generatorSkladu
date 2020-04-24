@@ -18,4 +18,4 @@ export default function Searcher() {
       </ul>
 
   )
-}
+}{footballer._i !== "undefined" ? footballer._i : noPhoto}
