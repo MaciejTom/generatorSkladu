@@ -7,6 +7,7 @@ import Formation4141 from "./Formation4141";
 import Formation451 from "./Formation451";
 import MainSection from "./MainSection";
 import shoeImg from "./../images/shoe.png";
+import glove from "./../images/gloves.png";
 import SoccerWiki from "../convertjson.json";
 import noPhoto from "./../images/nophoto.png";
 
@@ -19,6 +20,7 @@ export default function Container() {
     value.length > 3 ? footballer.filter(el => el._s.toLowerCase().includes(value.toLowerCase()) || el._f.toLowerCase().includes(value.toLowerCase()) ) : [];
   const [formation, setFormation] = useState(null);
   const img = <img src={shoeImg} />;
+  const gloveImg = <img className="gloveImg"src={glove}/>
   console.log(noPhoto)
 
   const [position, setPosition] = useState("1");
@@ -40,7 +42,7 @@ export default function Container() {
     return (
       <>
       <div className="searcher">
-        <Formation442 setFormation={setFormation} shoe={img} team={team} />
+        <Formation442 setFormation={setFormation} shoe={img} team={team} glove={gloveImg} />
         <div className="cardWithInput">
           <h2>Nazwisko piłkarza:</h2>
           <input value={value} onChange={e => setValue(e.target.value)} />
@@ -78,7 +80,7 @@ export default function Container() {
     return (
     <>
     <div className="searcher">
-    <Formation352 setFormation={setFormation} shoe={img} team={team} />
+    <Formation352 setFormation={setFormation} shoe={img} team={team} glove={gloveImg}/>
       <div className="cardWithInput">
         <h2>Nazwisko piłkarza:</h2>
         <input value={value} onChange={e => setValue(e.target.value)} />
@@ -115,7 +117,7 @@ export default function Container() {
     return(
       <>
       <div className="searcher">
-      <Formation433 setFormation={setFormation} shoe={img} team={team}/>
+      <Formation433 setFormation={setFormation} shoe={img} team={team} glove={gloveImg}/>
         <div className="cardWithInput">
           <h2>Nazwisko piłkarza:</h2>
           <input value={value} onChange={e => setValue(e.target.value)} />
@@ -153,7 +155,7 @@ export default function Container() {
     return (
       <>
       <div className="searcher">
-       <Formation451 setFormation={setFormation} shoe={img} team={team}/>;
+       <Formation451 setFormation={setFormation} shoe={img} team={team} glove={gloveImg}/>;
          <div className="cardWithInput">
            <h2>Nazwisko piłkarza:</h2>
            <input value={value} onChange={e => setValue(e.target.value)} />
@@ -191,7 +193,7 @@ export default function Container() {
     return (
       <>
       <div className="searcher">
-      <Formation4141 setFormation={setFormation} shoe={img} team={team}/>
+      <Formation4141 setFormation={setFormation} shoe={img} team={team} glove={gloveImg}/>
         <div className="cardWithInput">
           <h2>Nazwisko piłkarza:</h2>
           <input value={value} onChange={e => setValue(e.target.value)} />
@@ -203,7 +205,7 @@ export default function Container() {
               </div>
               <div>
                 <form onSubmit={e => handleSubmit(e, footballer)}>
-                  <select value={position} onChange={handlePositionChange}>
+                  <select onChange={handlePositionChange}>
                     <option value="1">ŚN</option>
                     <option value="2">LP</option>
                     <option value="3">ŚP</option>
@@ -229,7 +231,7 @@ export default function Container() {
     return (
       <>
       <div className="searcher">
-      <Formation4231 setFormation={setFormation} shoe={img} team={team} />
+      <Formation4231 setFormation={setFormation} shoe={img} team={team} glove={gloveImg}/>
         <div className="cardWithInput">
           <h2>Nazwisko piłkarza:</h2>
           <input value={value} onChange={e => setValue(e.target.value)} />
@@ -241,7 +243,7 @@ export default function Container() {
               </div>
               <div>
                 <form onSubmit={e => handleSubmit(e, footballer)}>
-                  <select value={position} onChange={handlePositionChange}>
+                  <select onChange={handlePositionChange}>
                     <option value="1">ŚN</option>
                     <option value="2">LS</option>
                     <option value="3">ŚPO</option>
@@ -271,27 +273,27 @@ export default function Container() {
       <div className="formations">
         <div className="formation">
         <h1>4-4-2</h1>
-        <Formation442 setFormation={setFormation} shoe={img} />
+        <Formation442 setFormation={setFormation} shoe={img} glove={gloveImg}/>
         </div>
         <div className="formation">
         <h1>3-5-2</h1>
-        <Formation352 setFormation={setFormation} shoe={img} />
+        <Formation352 setFormation={setFormation} shoe={img} glove={gloveImg}/>
         </div>
         <div className="formation">
           <h1>4-3-3</h1>
-        <Formation433 setFormation={setFormation} shoe={img} />
+        <Formation433 setFormation={setFormation} shoe={img} glove={gloveImg}/>
         </div>
         <div className="formation">
           <h1>4-5-1</h1>
-        <Formation451 setFormation={setFormation} shoe={img} />
+        <Formation451 setFormation={setFormation} shoe={img} glove={gloveImg}/>
         </div>
         <div className="formation">
           <h1>4-1-4-1</h1>
-        <Formation4141 setFormation={setFormation} shoe={img} />
+        <Formation4141 setFormation={setFormation} shoe={img} glove={gloveImg}/>
         </div>
         <div className="formation">
           <h1>4-2-3-1</h1>
-        <Formation4231 setFormation={setFormation} shoe={img} />
+        <Formation4231 setFormation={setFormation} shoe={img} glove={gloveImg} />
         </div>
       </div>
     </>

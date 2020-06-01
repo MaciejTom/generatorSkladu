@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
 
-export default function Formation4141({setFormation, shoe, team}) {
+export default function Formation4141({setFormation, shoe, team, glove}) {
 
 const myTeam = {...team}
 
   return (
     <>
     <div className="formation">
-  
+
         <div className="containerFormation" onClick={() => setFormation('4141') }>
         <div className="row">
             <div className="col-12 height-low">{typeof myTeam[1] !== "undefined" ? (<div className="card"><span className="span"><img width="100px" heigth="150px" src={myTeam[1]._i}/></span><div className="name"><span>{myTeam[1]._f}</span> <span>{myTeam[1]._s}</span></div></div>) : shoe}</div>
@@ -29,7 +29,7 @@ const myTeam = {...team}
           <div className="col-3 height-low">{typeof myTeam[10] !== "undefined" ? (<div className="card"><span className="span"><img width="100px" heigth="150px" src={myTeam[10]._i}/></span><div className="name"><span>{myTeam[10]._f}</span> <span>{myTeam[10]._s}</span></div></div>) : shoe}</div>
       </div>
       <div className="row">
-          <div className="col-12 height-low">{typeof myTeam[11] !== "undefined" ? (<div className="card"><span className="span"><img width="100px" heigth="150px" src={myTeam[11]._i}/></span><div className="name"><span>{myTeam[11]._f}</span> <span>{myTeam[11]._s}</span></div></div>) : shoe}</div>
+          <div className="col-12 height-low">{typeof myTeam[11] !== "undefined" ? (<div className="card"><span className="span"><img width="100px" heigth="150px" src={myTeam[11]._i}/></span><div className="name"><span>{myTeam[11]._f}</span> <span>{myTeam[11]._s}</span></div></div>) : glove}</div>
       </div>
   </div>
 </div>

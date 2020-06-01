@@ -1,5 +1,8 @@
 h1 {
   text-align: center;
+  margin-top: 3rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 .formation {
   display: flex;
@@ -12,17 +15,14 @@ h1 {
     color: black;
     .name {
       font-weight: bold;
-
     }
-
-
-
   }
 
   .name {
     text-align: center;
   }
 }
+
 .formations {
   display: flex;
   justify-content: space-between;
@@ -32,28 +32,26 @@ h1 {
   .containerFormation {
     width: 500px;
     margin: 0 auto;
-    background-image: url('../images/pitch.jpg');
+    background-image: url("../images/pitch.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     border-radius: 4px;
 
     .row {
-
-
       img {
         width: 70px;
       }
       [class*="col-"] {
         float: left;
-
-
       }
       @for $i from 1 through 12 {
         .col-#{$i} {
           width: 100% / 12 * $i;
         }
-
+      }
+      .gloveImg {
+        width: 100px;
       }
     }
 
@@ -75,17 +73,19 @@ h1 {
       content: "";
     }
   }
-
 }
 
 .card {
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
-  background: rgb(70,148,16);
-background: linear-gradient(90deg, rgba(70,148,16,1) 0%, rgba(23,82,0,1) 100%);
+  background: rgb(70, 148, 16);
+  background: linear-gradient(
+    90deg,
+    rgba(70, 148, 16, 1) 0%,
+    rgba(23, 82, 0, 1) 100%
+  );
   align-items: center;
-
 }
 .name {
   display: flex;
@@ -93,30 +93,28 @@ background: linear-gradient(90deg, rgba(70,148,16,1) 0%, rgba(23,82,0,1) 100%);
 }
 //////////////////////////////////////////////////////////////////////////////
 .containerFormation {
-  width: calc(1000px/1.4);
+  width: calc(1000px / 1.4);
   margin: 0 auto;
-  background-image: url('../images/pitch.jpg');
+  background-image: url("../images/pitch.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   margin-top: 10px;
 
   .row {
-
-
     img {
-      width: calc(140px/1.4);
+      width: calc(140px / 1.4);
     }
     [class*="col-"] {
       float: left;
-
-
     }
     @for $i from 1 through 12 {
       .col-#{$i} {
         width: 100% / 12 * $i;
       }
-
+    }
+    .gloveImg {
+      width: 140px;
     }
   }
 
@@ -143,12 +141,13 @@ background: linear-gradient(90deg, rgba(70,148,16,1) 0%, rgba(23,82,0,1) 100%);
   display: flex;
   justify-content: center;
   width: 100vw;
+
 }
 .cardWithInput {
   overflow: scroll;
   width: 500px;
   height: 100vh;
-  overflow : auto;
+  overflow: auto;
   margin-top: 10px;
   background: rgba(0, 0, 0, 0.4);
   color: black;
@@ -164,23 +163,25 @@ background: linear-gradient(90deg, rgba(70,148,16,1) 0%, rgba(23,82,0,1) 100%);
   display: block;
   text-align: center;
 }
-input, option, select  {
-	background-color:#44c767;
-	border-radius:17px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:8px 15px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
+input,
+option,
+select {
+  background-color: #44c767;
+  border-radius: 17px;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 8px 15px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
 }
 input:hover {
-	background-color:#5cbf2a;
+  background-color: #5cbf2a;
 }
 input:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }

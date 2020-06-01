@@ -1,18 +1,13 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
-
 import "./../sass/style.scss";
 // adres do głównego pliku SASS
 
-import Container from "./Container.js"
+import Container from "./Container.js";
 
 const App = () => {
-  return (
-
-      <Container/>
-
-  );
+  return <Container />;
 };
 
 document.addEventListener("DOMContentLoaded", function() {

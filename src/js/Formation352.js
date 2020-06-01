@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 
 
-export default function Formation352({setFormation, shoe, team}) {
+export default function Formation352({setFormation, shoe, team, glove}) {
 
   const myTeam = {...team}
   console.log(myTeam)
@@ -11,7 +11,7 @@ export default function Formation352({setFormation, shoe, team}) {
   return (
     <>
     <div className="formation">
-      
+
         <div className="containerFormation" onClick={() => setFormation('352') }>
       <div className="row">
           <div className="col-3 height"></div>
@@ -33,10 +33,11 @@ export default function Formation352({setFormation, shoe, team}) {
 
       </div>
       <div className="row">
-          <div className="col-12 height">{typeof myTeam[11] !== "undefined" ? (<div className="card"><span className="span"><img width="100px" heigth="150px" src={myTeam[11]._i}/></span><div className="name"><span>{myTeam[11]._f}</span> <span>{myTeam[11]._s}</span></div></div>) : shoe}</div>
+          <div className="col-12 height">{typeof myTeam[11] !== "undefined" ? (<div className="card"><span className="span"><img width="100px" heigth="150px" src={myTeam[11]._i}/></span><div className="name"><span>{myTeam[11]._f}</span> <span>{myTeam[11]._s}</span></div></div>) : glove}</div>
       </div>
   </div>
 </div>
+
     </>
   );
 }
