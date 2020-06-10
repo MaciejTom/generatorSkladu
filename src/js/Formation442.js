@@ -1,18 +1,26 @@
 import React, { useState } from "react";
 import shoeImg from './../images/shoe.png'
 
+
 export default function Formation442({setFormation, shoe, team, glove}) {
 
 
-  const myTeam = {...team}
-  console.log(myTeam)
+
+const myTeam = { ...team };
+console.log(myTeam);
+
+
+
+const element = document.querySelector("img");
 
 return (
     <>
     <div className="formation">
 
         <div className="containerFormation" onClick={() => setFormation('442') }>
+
       <div className="row">
+
           <div className="col-3 height"></div>
           <div className="col-3 height">{typeof myTeam[1] !== "undefined" ? (<div className="card"><span className="span"><img width="100px" heigth="150px" src={myTeam[1]._i}/></span><div className="name"><span>{myTeam[1]._f}</span> <span>{myTeam[1]._s}</span></div></div>) : shoe}</div>
           <div className="col-3 height">{typeof myTeam[2] !== "undefined" ? (<div className="card"><span className="span"><img width="100px" heigth="150px" src={myTeam[2]._i}/></span><div className="name"><span>{myTeam[2]._f}</span> <span>{myTeam[2]._s}</span></div></div>) : shoe}</div>
